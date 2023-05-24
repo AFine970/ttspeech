@@ -7,7 +7,7 @@
     "prepare": "husky install",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "build": "tsup ./src/main.ts --dts --no-splitting"
+    "build": "tsup ./src/index.ts --dts"
   },
   "keywords": [],
   "author": "",

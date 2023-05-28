@@ -8,4 +8,4 @@ export type Utterance = Pick<
   "lang" | "pitch" | "rate" | "voice" | "text"
 >;
 
-export type SpeakValue = string | string[] | Utterance[];
+export type SpeakValue = string | Utterance;

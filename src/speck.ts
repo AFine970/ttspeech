@@ -10,10 +10,19 @@ const DefaultOptions: VoiceOption = {
 };
 
 function speck(params: SpeakValue) {
-  if (Array.isArray(params)) {
-  }
-  const uttrs = initSpeechSynthesisUtterance(params);
-  uttrs.forEach((uttr) => controller.speak(uttr));
+  const uttr = initSpeechSynthesisUtterance(params);
+
+  return new Promise<void>((resolve, reject) => {
+    // @ts-expect-error
+    uttr.onend?.(() => {
+      resolve();
+    });
+    // @ts-expect-error
+    uttr.onerror?.(() => {
+      reject();
+    });
+    controller.speak(uttr);
+  });
 }
 
 function initVoice(options: VoiceOption) {
@@ -23,24 +32,20 @@ function initVoice(options: VoiceOption) {
 
 /**
  * transform text to SpeechSynthesisUtterance instance
- * @param params string | string[]
- * @returns SpeechSynthesisUtterance[]
  */
 function initSpeechSynthesisUtterance(params: SpeakValue) {
-  const texts = Array.isArray(params) ? params : [params];
-  return texts.map((item) => {
-    const isUtterance = typeof item !== "string";
-    const uttr = new window.SpeechSynthesisUtterance(
-      isUtterance ? item.text : item
-    );
+  const isUtterance = typeof params !== "string";
+  const uttr = new window.SpeechSynthesisUtterance(
+    isUtterance ? params.text : params
+  );
 
-    const userOptions = Object.assign(DefaultOptions, isUtterance ? item : {});
-    const voice = initVoice(userOptions);
-    userOptions.voice = voice;
+  const userOptions = Object.assign(DefaultOptions, isUtterance ? params : {});
+  const voice = initVoice(userOptions);
+  userOptions.voice = voice;
 
-    Object.assign(uttr, userOptions);
-    return uttr;
-  });
+  Object.assign(uttr, userOptions);
+
+  return uttr;
 }
 
 export { speck };

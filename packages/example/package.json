@@ -1,16 +1,17 @@
 {
-  "name": "ttspeech-project",
+  "name": "ttspeech-example",
   "version": "1.0.0",
   "description": "text to speech for node.js and browser",
   "scripts": {
-    "prepare": "husky install"
+    "dev": "vite --open"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@commitlint/cli": "^17.6.3",
-    "@commitlint/config-conventional": "^17.6.3",
-    "husky": "^8.0.3"
+    "vite": "^4.3.9"
+  },
+  "dependencies": {
+    "ttspeech": "workspace:^"
   }
 }

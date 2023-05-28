@@ -13,14 +13,13 @@ function speck(params: SpeakValue) {
   const uttr = initSpeechSynthesisUtterance(params);
 
   return new Promise<void>((resolve, reject) => {
-    // @ts-expect-error
-    uttr.onend?.(() => {
+    uttr.onend = () => {
       resolve();
-    });
-    // @ts-expect-error
-    uttr.onerror?.(() => {
+    };
+
+    uttr.onerror = () => {
       reject();
-    });
+    };
     controller.speak(uttr);
   });
 }

@@ -15,6 +15,6 @@
     "isolatedModules": true,
     "lib": ["esnext", "dom", "dom.iterable"]
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": ["packages/**/*.ts"],
+  "exclude": ["/node_modules/"]
 }

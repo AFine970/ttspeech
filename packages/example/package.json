@@ -1,5 +1,5 @@
 {
-  "name": "ttspeech-example",
+  "name": "tts-example",
   "version": "1.0.0",
   "description": "text to speech for node.js and browser",
   "scripts": {
@@ -9,9 +9,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "less": "^4.1.3",
+    "unplugin-auto-import": "^0.16.2",
+    "unplugin-vue-components": "^0.24.1",
     "vite": "^4.3.9"
   },
   "dependencies": {
-    "ttspeech": "workspace:^"
+    "@vitejs/plugin-vue": "^4.2.3",
+    "element-plus": "^2.3.5",
+    "ttspeech": "workspace:^",
+    "vue": "^3.3.4"
   }
 }

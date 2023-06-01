@@ -1,13 +1,11 @@
 {
   "name": "ttspeech-project",
   "version": "1.0.0",
-  "description": "text to speech for node.js and browser",
+  "description": "text to speech for browser",
   "scripts": {
     "prepare": "husky install"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "AFine970",
   "devDependencies": {
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",

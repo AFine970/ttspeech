@@ -1,13 +1,14 @@
 {
   "name": "ttspeech",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "text to speech for browser",
   "main": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "build": "tsup ./src/index.ts --dts --format esm"
+    "build": "tsup ./src/index.ts --dts --format esm",
+    "release": "standard-version"
   },
   "keywords": [
     "tts",
@@ -16,6 +17,7 @@
   "author": "AFine970",
   "license": "MIT",
   "devDependencies": {
+    "standard-version": "^9.5.0",
     "tsup": "^6.7.0",
     "vitest": "^0.31.1"
   },

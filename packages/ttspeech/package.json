@@ -4,6 +4,9 @@
   "description": "text to speech for browser",
   "main": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "vitest",
     "coverage": "vitest run --coverage",
@@ -17,11 +20,17 @@
   "author": "AFine970",
   "license": "MIT",
   "devDependencies": {
+    "@vitest/coverage-c8": "^0.31.4",
+    "happy-dom": "^9.20.3",
     "standard-version": "^9.5.0",
     "tsup": "^6.7.0",
     "vitest": "^0.31.1"
   },
   "dependencies": {
     "typescript": "^5.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AFine970/ttspeech.git"
   }
 }

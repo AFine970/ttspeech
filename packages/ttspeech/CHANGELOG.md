@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/AFine970/ttspeech/compare/v1.1.0...v1.2.0) (2023-06-03)
+
+
+### Features
+
+* add unit test ([4f8c9ae](https://github.com/AFine970/ttspeech/commit/4f8c9ae66a1dc3192fbce72a1587ac98206dcd17))
+
 ## 1.1.0 (2023-06-01)
 
 

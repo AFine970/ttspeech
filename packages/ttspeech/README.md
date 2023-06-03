@@ -45,4 +45,4 @@ pnpm install
 cd /packages/example && pnpm dev
 ```
 
-<img src="./packages/example/public/demo.png">
+![iShot_2023-06-03_20.22.07.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ebc5198af69c4e129bb4fc6e0a02021f~tplv-k3u1fbpfcp-watermark.image?)

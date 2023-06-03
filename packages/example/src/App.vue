@@ -1,12 +1,13 @@
 <script lang="ts" setup>
 import { reactive, ref } from "vue";
-import { speck } from "ttspeech";
+import { speck, type Utterance } from "ttspeech";
 
-const speechUttrOptions = reactive({
-  text: "如果你也和我一样，那我觉得，这个事情，真的太酷啦！",
+const speechUttrOptions = reactive<Utterance>({
+  text: "我是一个特别固执的人，我从来不会在意别人跟我说什么，让我去做，让我去怎么做，我不管。如果，你也可以像我一样，那我觉得，这件事情，太酷辣!!!",
   lang: "zh-CN",
-  rate: 1,
   pitch: 1,
+  rate: 5,
+  volume: 0.5,
   voice: null,
 });
 
@@ -35,7 +36,7 @@ const onplay = async () => {
         <span>Pitch</span>
         <el-slider
           v-model="speechUttrOptions.pitch"
-          :min="0"
+          :min="0.1"
           :max="2"
           :step="0.1"
         />
@@ -46,6 +47,15 @@ const onplay = async () => {
           v-model="speechUttrOptions.rate"
           :min="0.1"
           :max="10"
+          :step="0.1"
+        />
+      </div>
+      <div class="mt-4">
+        <span>Volume</span>
+        <el-slider
+          v-model="speechUttrOptions.volume"
+          :min="0.1"
+          :max="1"
           :step="0.1"
         />
       </div>

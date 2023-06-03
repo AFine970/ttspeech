@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/AFine970/ttspeech/compare/v1.2.0...v1.3.0) (2023-06-03)
+
+
+### Features
+
+* export type definition ([50ea362](https://github.com/AFine970/ttspeech/commit/50ea3625fda142e17ddaf89cf1259dac64f51ff3))
+
+
+### Bug Fixes
+
+* error handle ([2893824](https://github.com/AFine970/ttspeech/commit/2893824e3c96ee825ffd97ba33b4d52fcf1aefab))
+
 ## [1.2.0](https://github.com/AFine970/ttspeech/compare/v1.1.0...v1.2.0) (2023-06-03)
 
 

@@ -5,6 +5,7 @@ const DefaultOptions: VoiceOption = {
   pitch: 1,
   rate: 1,
   voice: null,
+  volume: 1,
 };
 
 function speck(params: SpeakValue) {
@@ -51,9 +52,13 @@ function errorHandle(params: SpeakValue) {
   if (typeof window?.speechSynthesis === "undefined") {
     throw new Error("your browser does not support tts");
   }
-  if (typeof params !== "string" || Array.isArray(params)) {
-    throw new Error("please input valid value");
+  if (
+    typeof params === "string" ||
+    (typeof params === "object" && !Array.isArray(params) && params !== null)
+  ) {
+    return;
   }
+  throw new Error("please input valid value");
 }
 
 export { speck };

@@ -45,4 +45,12 @@ describe("speck", () => {
   test("应该返回一个promise", async () => {
     await expect(speck("123")).resolves.toBe(true);
   });
+
+  test("输入一个对象，可以正常执行", async () => {
+    await expect(
+      speck({
+        text: "hello world",
+      })
+    ).resolves.toBe(true);
+  });
 });

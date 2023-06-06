@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { reactive, ref } from "vue";
-import { speck, type Utterance } from "ttspeech";
+import { onMounted, reactive, ref } from "vue";
+import { speck, type Utterance, getAllVoices } from "ttspeech";
 
 const speechUttrOptions = reactive<Utterance>({
   text: "我是一个特别固执的人，我从来不会在意别人跟我说什么，让我去做，让我去怎么做，我不管。如果，你也可以像我一样，那我觉得，这件事情，太酷辣!!!",
@@ -18,6 +18,12 @@ const onplay = async () => {
   await speck(speechUttrOptions);
   specking.value = false;
 };
+
+const allVoices = ref<SpeechSynthesisVoice[]>([]);
+onMounted(async () => {
+  allVoices.value = await getAllVoices();
+  speechUttrOptions.voice = allVoices.value[0] ?? null;
+});
 </script>
 
 <template>
@@ -32,6 +38,22 @@ const onplay = async () => {
         type="textarea"
         placeholder="Please input"
       />
+      <div class="mt-4">
+        <p>Voice</p>
+        <el-select
+          v-model="speechUttrOptions.voice"
+          class="w-full"
+          placeholder="Select Voice"
+          size="large"
+        >
+          <el-option
+            v-for="item in allVoices"
+            :key="item.name"
+            :label="item.name"
+            :value="item"
+          />
+        </el-select>
+      </div>
       <div class="mt-4">
         <span>Pitch</span>
         <el-slider
@@ -59,7 +81,9 @@ const onplay = async () => {
           :step="0.1"
         />
       </div>
-      <el-button class="mt-4" type="primary" @click="onplay" :loading="specking">Play</el-button>
+      <el-button class="mt-4" type="primary" @click="onplay" :loading="specking"
+        >Play</el-button
+      >
     </el-card>
   </div>
 </template>
@@ -77,5 +101,8 @@ const onplay = async () => {
 
 .mt-4 {
   margin-top: 16px;
+}
+.w-full {
+  width: 100%;
 }
 </style>

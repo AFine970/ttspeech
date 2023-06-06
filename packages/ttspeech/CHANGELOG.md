@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.1](https://github.com/AFine970/ttspeech/compare/v1.3.0...v1.3.1) (2023-06-06)
+
+
+### Bug Fixes
+
+* issue-11 ([739553c](https://github.com/AFine970/ttspeech/commit/739553c3600301825c01ad9d964a40d0c29521a8))
+
 ## [1.3.0](https://github.com/AFine970/ttspeech/compare/v1.2.0...v1.3.0) (2023-06-03)
 
 

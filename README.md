@@ -1,6 +1,18 @@
 # ttspeech
 
-A `Promise` tts api, it depend on browser api `window.speechSynthesis`;
+> Out-of-the-box `Promise` tts api, it depend on browser api `window.speechSynthesis`;
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/ttspeech" rel="nofollow">
+    <img alt="downloads" src="https://img.shields.io/npm/dt/ttspeech.svg">
+  </a>
+  <a href="https://www.npmjs.com/package/ttspeech" rel="nofollow">
+    <img alt="npm version" src="https://img.shields.io/npm/v/ttspeech.svg" style="max-width:100%;">
+  </a>
+  <a href="https://github.com/AFine970/ttspeech/blob/master/packages/ttspeech/LICENSE">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" style="max-width:100%;">
+  </a>
+</p>
 
 ## Install
 
